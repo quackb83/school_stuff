@@ -55,7 +55,7 @@ int cycles(int&& instr, double&& mem, const Computer& c) {
 	int non_memOps = instr - memOps;
 	int cacheHits = memOps * c.cacheHitR;
 	int cacheMiss = memOps - cacheHits;
-	int cycles = (non_memOps)+(memOps * 2)+(cacheHits * c.cacheMissP);
+	int cycles = (non_memOps)+(memOps * 2)+(cacheMiss * c.cacheMissP);
 
 	return cycles;
 }
