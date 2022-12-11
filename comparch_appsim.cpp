@@ -51,11 +51,11 @@ int main() {
 
 int cycles(int&& instr, double&& mem, const Computer& c) {
 
-	int memOps = instr * mem;
-	int non_memOps = instr - memOps;
-	int cacheHits = memOps * c.cacheHitR;
-	int cacheMiss = memOps - cacheHits;
-	int cycles = (non_memOps)+(memOps * 2)+(cacheMiss * c.cacheMissP);
+	const int memOps = instr * mem;
+	const int non_memOps = instr - memOps;
+	const int cacheHits = memOps * c.cacheHitR;
+	const int cacheMiss = memOps - cacheHits;
+	const int cycles = (non_memOps)+(memOps * 2)+(cacheMiss * c.cacheMissP);
 
 	return cycles;
 }
